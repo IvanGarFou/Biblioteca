@@ -4,7 +4,7 @@ const userController = require('../Controllers/userController')
 
 router.post('/', userController.createUser)
 router.get('/', userController.getAllUsers)
-router.get('/:id', userController.getOneUser)
+router.get('/:username', userController.getOneUser)
 router.patch('/:id', userController.editUser)
 
 module.exports = router

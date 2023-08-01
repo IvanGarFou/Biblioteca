@@ -10,8 +10,10 @@ exports.getAllUsers = async (req, res) => {
     return res.status(200).json(users)
 }
 exports.getOneUser = async (req, res) => {
-    const { id } = req.params
-    const user = await User.findById(id)
+    const { username } = req.params
+    const user = await User.findOne({
+        userName: username
+    })
     return res.status(200).json(user)
 }
 exports.editUser = async (req, res) => {
